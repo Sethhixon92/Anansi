@@ -1,6 +1,8 @@
-const Employee = require("./Employee");
-const Timesheet = require("./Timesheet");
-const Workday = require("./Workday");
+ const Employee = require("./Employee");
+ const Timesheet = require("./Timesheet");
+ const Comment = require("./Comment");
+
+
 
 // create associations
 Employee.hasMany(Timesheet, {
@@ -12,21 +14,21 @@ Timesheet.belongsTo(Employee, {
   onDelete: "SET NULL"
 });
 
-Workday.belongsTo(Employee, {
+Comment.belongsTo(Employee, {
   foreignKey: "employee_id",
   onDelete: "SET NULL"
 });
 
-Workday.belongsTo(Timesheet, {
+Comment.belongsTo(Timesheet, {
   foreignKey: "timesheet_id",
   onDelete: "SET NULL"
 });
 
-Employee.hasMany(Workday, {
+Employee.hasMany(Comment, {
   foreignKey: "employee_id"
 });
 
-Timesheet.hasMany(Workday, {
+Timesheet.hasMany(Comment, {
   foreignKey: "timesheet_id",
   onDelete: "SET NULL"
 });
@@ -35,4 +37,4 @@ Timesheet.hasMany(Workday, {
 
 
 
-module.exports = { Employee, Timesheet, Workday };
+ module.exports = { Employee, Timesheet, Comment };
