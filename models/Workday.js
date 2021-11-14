@@ -1,39 +1,34 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-
 // create our Post model
-class Timesheet extends Model {}
+class Workday extends Model {}
 
 // create fields/columns for Post model
-Timesheet.init(
+Workday.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
-    project_name: {
+    work_day: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    project_description: {
-      type: DataTypes.TEXT,
       allowNull: false,
-    },
-    hours_worked: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        isDecimal: true
-      }
     },
     employee_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "employee",
-        key: "id"
+        key: "id",
+      },
+    },
+    timesheet_id: {
+      type: DataTypes.STRING,
+      references: {
+        model: "timesheet",
+        key: "id",
       },
     },
   },
@@ -41,8 +36,8 @@ Timesheet.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "timesheet"
+    modelName: "workday",
   }
 );
 
-module.exports = Timesheet;
+module.exports = Workday;
