@@ -39,6 +39,6 @@ const employeesData = [
     }
 ];
 
-const seedsEmployees = () => Employees.bulkCreate(employeesData);
+const seedsEmployees = () => Employee.bulkCreate(employeesData);
 
-module.exports =  seedsEmployess;
+module.exports = seedsEmployees;
