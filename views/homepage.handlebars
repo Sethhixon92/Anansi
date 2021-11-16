@@ -1,0 +1,30 @@
+<div class="container">
+  <table class="table table-bordered table-primary rounded border-radius ">  
+  <thead> 
+    <tr> 
+      <th scope="col" style="text-align: center;">Employee ID</th>
+      <th scope="col" style="text-align: center;">Project Name</th>
+      <th scope="col" style="text-align: center;">Project Description</th>
+      <th scope="col" style="text-align: center;">Hours Worked</th>
+      <th scope="col" style="text-align: center;">Time Posted</th>
+    </tr>
+  </thead>
+  {{#each posts}}
+  <tbody>
+    <tr>
+      <td>
+          <a style="text-decoration: none; "href="/post/{{id}}">{{id}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;"href="/post/{{id}}">{{project_name}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;"href="/post/{{id}}">{{project_description}}</a>
+      </td>
+      <td>{{hours_worked}} total hrs </td>
+      <td>{{created_at}} </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

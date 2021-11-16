@@ -2,6 +2,24 @@
     box-sizing: border-box;
 }
 
+.table {
+    border-radius: brown;  
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+body {
+    background-color: brown;
+
+}
+
+
+
+/*
 body,
 html {
     height: 100%;
@@ -266,4 +284,6 @@ main {
 .btn,
 #post-title {
     width: 100%;
-}
+}*/
+
+
