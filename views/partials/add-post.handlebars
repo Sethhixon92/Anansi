@@ -1,0 +1,288 @@
+<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
+
+<article class="new-page">
+    <section class="new-form-page">
+        <div class="form-heading">
+            <h2>Time Sheet</h2>
+        </div>
+        <div class="form-section">
+            <form class="new-post-form">
+                <div class="post-title-section">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" name="post-title" />
+                </div>
+                <!--M-A-I-N-->
+                <main>
+                    <div class="container">
+                        <hr>
+                        <button type="button" class="btn btn-info btn-lg pull-right" data-toggle="modal"
+                            data-target="#myModal">Add New</button>
+                        <h2>Time Logs</h2>
+                        <div class="clearfix"></div>
+                        <hr>
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date</th>
+                                    <th>Total Hours</th>
+                                    <th>Project Name</th>
+                                    <th>Project Description</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr ng-repeat="user in users">
+
+                                    <td> {{user.name}} </td>
+                                    <td> {{user.dt | date:'MM/dd/yyyy'}} </td>
+                                    <td>{{user.hours | time: 'hh:mm a'}}</td>
+                                    <td>{{user.project name}}</td>
+                                    <td>{{user.Project Ddescription}}</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm" type="button" data-toggle="modal"
+                                            data-target="#myModalEdit" ng-click="selectUser(user)">Edit</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm" type="button" data-toggle="modal"
+                                            data-target="#myModalDelete" ng-click="selectUser(user)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Trigger the modal with a button -->
+
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Add Time</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputName" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="Name"
+                                                    ng-model="newUser.name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                                            <div class="col-sm-10">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control"
+                                                        uib-datepicker-popup="{{format}}" id="date"
+                                                        ng-model="newUser.dt" placeholder="MM/DD/YYY"
+                                                        is-open="popup1.opened" datepicker-options="dateOptions"
+                                                        ng-required="true" close-text="Close"
+                                                        alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn"><button type="button"
+                                                            class="btn btn-default" ng-click="open1()"><i
+                                                                class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Project Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputComments"
+                                                    placeholder="Project name..." ng-model="newUser.comments">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Project
+                                                Description</label>
+                                            <div class="col-sm-10">
+
+                                                <input type="text" class="form-control" id="inputComments"
+                                                    placeholder="Project Description" ng-model="newUser.comments">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Dropdown button
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                        ng-click="saveUser();">Save</button>
+                                                </div>
+                                            </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Modal to delete an Entry from table -->
+                    <div id="myModalDelete" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Are You Sure?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 style="color: red">You are going to delete the user "{{clickedUser.name}} ". All
+                                        information will be deleted and can't
+                                        be undone. </h3>
+                                    <br />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal"
+                                        ng-click="deleteUser()">Yes</button>
+                                    <button type="button" class="btn btn-default pull-right"
+                                        data-dismiss="modal">No</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Modal to add new entry to table -->
+                    <div id="myModalEdit" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Edit This Entry</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputName" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="Name"
+                                                    ng-model="clickedUser.name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                                            <div class="col-sm-10">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup
+                                                        ng-model="clickedUser.dt" placeholder="MM/DD/YYY"
+                                                        is-open="popup1.opened" datepicker-options="dateOptions"
+                                                        ng-required="true" close-text="Close" />
+                                                    <span class="input-group-btn"><button type="button"
+                                                            class="btn btn-default" ng-click="open1()"><i
+                                                                class="glyphicon glyphicon-calendar"></i></button>
+                                                    </span>
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputFrom" class="col-sm-2 control-label">From</label>
+                                            <div uib-timepicker ng-model="clickedUser.from" hour-step="hstep"
+                                                minute-step="mstep" show-meridian="ismeridian">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputTo" class="col-sm-2 control-label">To</label>
+                                            <div uib-timepicker ng-model="clickedUser.to" hour-step="hstep"
+                                                minute-step="mstep" show-meridian="ismeridian">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Comments</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputComments"
+                                                    placeholder="Comments..." ng-model="clickedUser.comments">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default" data-dismiss="modal"
+                                                    ng-click="updateUser()">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        </div>
+
+
+
+        </main>
+        <div class="push"></div>
+
+        <!--F-O-O-T-E-R-->
+        <footer class="container-fluid text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text"> Anansi TimeLog Inc.</h5>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+
+            </div>
+
+        </footer>
+
+        <textarea class="entry-field" id="post-content" name="post-content"></textarea>
+
+
+        <button type="submit" class="btn">submit</button>
+        </form>
+        </div>
+    </section>
+</article>
+
+<script src="/javascript/add-post.js"></script>
