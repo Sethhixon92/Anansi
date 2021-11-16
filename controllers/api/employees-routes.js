@@ -1,10 +1,5 @@
-
-
 const router = require('express').Router();
 const { Employee, Timesheet, Comment } = require('../../models');
-
-// `/api/employees` endpoint
-
 
 router.get('/', (req, res) => {
   Employee.findAll()
