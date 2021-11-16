@@ -1,24 +1,27 @@
-<section class="sign-in-page">
-    <div class="form-heading">
-        <h1>Sign Up</h1>
-    </div>
-    <div class="form-section">
-        <form class="signup-form">
-            <div>
-                <label for="username-signup">Select a Username</label>
-                <input type="text" class="entry-field" id="username-signup" />
-            </div>
-            <div>
-                <label for="password-signup">Select a password</label>
-                <input type="password" class="entry-field" id="password-signup" />
-            </div>
-            <div>
-                <button type="submit" class="login-signup-btn">Sign Up!</button>
-            </div>
-        </form>
-    </div>
+<div class="card">
+    <h3 class="card-header">Sign Up</h3>
+    <form class="signup-form">
+        <div>
+            <label for="exampleInputFirstName">First Name</label>
+            <input type="name" class="form-control" id="exampleInputFirstName" aria-describedby="nameHelp" placeholder="Enter first name">
+        </div>
+        <div>
+            <label for="exampleInputLastName">Last Name</label>
+            <input type="name" class="form-control" id="exampleInputLastName" aria-describedby="nameHelp" placeholder="Enter last name">
+        </div>
+        <div>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div>
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <small id="passwordHelp" class="form-text text-muted">Password must have atleast four characters.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <a class="login-link" href="/login">Login instead</a>
+    </form>
+</div>
+    <script src="/javascript/signup.js"></script>
 
-    <a href="/login" class="login-link">log in instead</a>
-</section>
-
-<script src="/javascript/signup.js"></script>
