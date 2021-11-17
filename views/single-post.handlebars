@@ -1,0 +1,64 @@
+<div class="container">
+  <table class="table table-bordered table-primary rounded border-radius ">  
+  <thead> 
+    <tr> 
+      <th scope="col" style="text-align: center;">Employee ID</th>
+      <th scope="col" style="text-align: center;">Project Name</th>
+      <th scope="col" style="text-align: center;">Project Description</th>
+      <th scope="col" style="text-align: center;">Hours Worked</th>
+      <th scope="col" style="text-align: center;">Time Posted</th>
+      <th scope="col" style="text-align: center;">Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+          <a style="text-decoration: none;">{{timesheet.id}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;" href="/timesheet/{{timesheet.id}}">{{timesheet.project_name}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;" href="/timesheet/{{timesheet.id}}">{{timesheet.project_description}}</a>
+      </td>
+      <td>{{timesheet.hours_worked}} total hrs </td>
+      <td>{{timesheet.employee.email}} clocked in on {{timesheet.created_at}} </td>
+      <td>{{timesheet.comments.length}} comment(s)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="container">
+    {{#if loggedIn}}
+    <form class="comment-form">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea" class="form-label">Type your comments</label>
+            <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-primary">Add comment</button>
+        </div>
+    </form>
+    {{/if}}
+</div>
+
+
+<div class="comments">
+  {{#each timesheet.comments}}
+  <section class="comment">
+    <div class="meta">
+      Posted by {{employee.email}} on {{created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
+
+
