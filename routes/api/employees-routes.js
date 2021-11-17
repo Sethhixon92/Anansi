@@ -3,9 +3,6 @@
 const router = require('express').Router();
 const { Employee, Timesheet, Comment } = require('../../models');
 
-// `/api/employees` endpoint
-
-
 router.get('/', (req, res) => {
   Employee.findAll()
     .then(dbData => res.json(dbData))
@@ -56,9 +53,19 @@ router.post('/', (req, res) => {
     last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password
-  }).then(dbEmployeedata => {
-    res.json(dbEmployeedata);
-  }).catch(err => {
+  })
+  .then(dbEmployeedata => {
+    req.session.save(() => {
+      req.session.employee_id = dbEmployeeData.id;
+      req.session.email = dbEmployeeData.email;
+      req.session.loggedIn = true;
+
+      res.json(dbEmployeedata);
+    });
+
+    
+  })
+  .catch(err => {
     console.log(err);
     res.status(500).json(err);
   });
@@ -75,11 +82,33 @@ router.post('/login',(req,res) => {
       return;
     }
     const validPassword = dbEmployeeData.checkPassword(req.body.password);
+
     if(!validPassword){
       res.status(400).json({message: 'incorrect password'});
+      return;
     }
-    res.json({ employee: dbEmployeeData, message: 'You are now logged in!' });
-  })
-})
+
+    req.session.save(() => {
+      req.session.employee_id = dbEmployeeData.id;
+      req.session.email = dbEmployeeData.email;
+      req.session.loggedIn = true;
+
+      res.json({ employee: dbEmployeeData, message: 'You are now logged in!' });
+    });
+  });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+
+});
 
 module.exports = router;
+

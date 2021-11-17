@@ -10,10 +10,12 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.5",
     "express-session": "^1.17.2",
-    "mysql2": "^2.3.3",
+    "materialize-css": "^1.0.0",
+    "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
   },
   "scripts": {
+    "seed": "node seeds/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
