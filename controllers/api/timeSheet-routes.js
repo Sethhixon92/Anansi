@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
     project_name: req.body.project_name,
     project_description: req.body.project_description,
     hours_worked: req.body.hours_worked,
-    employee_id: req.body.employee_id
+    employee_id: req.session.employee_id
   })
     .then((dbTimesheetData) => res.json(dbTimesheetData))
     .catch(err => {

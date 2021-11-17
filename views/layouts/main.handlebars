@@ -16,8 +16,8 @@
                 <a class="anansi" href="/">Anansi LLC</a>
             </h1>
             <nav>
-                <a class="dashboard" href="/dashboard">Dashboard</a>
                 {{#if loggedIn}}
+                <a class="dashboard" href="/dashboard">Dashboard</a>
                 <a id="logout" class="logout" href="/logout">Logout</a>
                 {{else}}
                 <a class="login" href="/login">Login</a>

@@ -1,14 +1,16 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const post_content = document.querySelector('textarea[name="post-content"]').value.trim();
+    const project_name = document.querySelector('#formControlInput3').value;
+    const project_description = document.querySelector('#formControlTextarea5').value.trim();
+    const hours_worked = document.querySelector('#formControlInput4').value.trim();
 
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/timesheets`, {
         method: 'POST',
         body: JSON.stringify({
-            title,
-            post_content
+            project_name,
+            project_description,
+            hours_worked
         }),
         headers: {
             'Content-Type': 'application/json'
