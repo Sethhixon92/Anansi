@@ -85,8 +85,6 @@ router.post('/login',(req,res) => {
       res.status(400).json({message: 'incorrect password'});
       return;
     }
-<<<<<<< HEAD:routes/api/employees-routes.js
-=======
 
     req.session.save(() => {
       req.session.employee_id = dbEmployeeData.id;
@@ -132,17 +130,8 @@ router.post('/logout', (req, res) => {
   }
 
 });
->>>>>>> d729780bdb06b4bef6f55eb35e4b32e0683ea1f1:controllers/api/employees-routes.js
 
-    req.session.save(() => {
-      req.session.employee_id = dbEmployeeData.id;
-      req.session.email = dbEmployeeData.email;
-      req.session.loggedIn = true;
 
-      res.json({ employee: dbEmployeeData, message: 'You are now logged in!' });
-    });
-  });
-});
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
