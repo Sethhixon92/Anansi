@@ -1,4 +1,4 @@
-const { Employees } = require('../models');
+const { Employee, Timesheet } = require('../models');
 
 const employeesData = [
     {
