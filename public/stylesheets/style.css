@@ -186,5 +186,79 @@
     display: flex;
     justify-content: center;
     padding: 5%;
-    font-size: 110%;
+    
+
+}
+
+#create-new-post {
+    width: 15%;
+}
+
+.sign-in-link,
+.login-link {
+    color: #60a37a;
+}
+
+.form-heading h1,
+.form-heading h2 {
+    color: #afbfe2;
+}
+
+.login-form,
+.signup-form,
+.post-content,
+.post-title-section {
+    padding: 10px 10px 0px 0px;
+}
+
+.entry-field,
+.login-signup-btn,
+.btn,
+#post-title {
+    width: 100%;
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+  
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
   }
+  
+/* Set black background color, white text and some padding */
+.push{
+    /*background-color: #555;
+    color: white;*/
+    padding: 15px;
+    height: 155px; 
+  }
+footer {
+ background-color: #555;
+    color: white;
+    padding: 15px;
+    height: 155px; 
+
+}
+  
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
+
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+
