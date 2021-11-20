@@ -1,11 +1,11 @@
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect("/dashboard");
-        return;
-    }
-  res.render("hero");
+    // if (req.session.loggedIn) {
+    //     res.redirect("/dashboard");
+    //     return;
+    // }
+  res.render("hero"); 
 });
 
 // when I type localhost:3001/login
