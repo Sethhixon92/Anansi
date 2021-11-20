@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h2 style="color: royalblue;">Add New Post</h2>
+        <h2 style="color: royalblue;">Add New Timesheet</h2>
         <form class="new-post-form">
             <div class="mb-3">
                 <label for="formControlInput3" class="form-label">Project Name</label>
@@ -15,20 +15,23 @@
                 <textarea class="form-control" id="formControlTextarea5" rows="3"></textarea>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Create Post</button>
+                <button type="submit" class="btn btn-primary">Create </button>
             </div>
         </form>
     </div>
 </section>
 
 <div class="container">
+  <div>
+    <h2 style="color: royalblue;">Your Recent Timesheets</h2>
+  </div>
   <table class="table table-bordered table-primary rounded border-radius ">  
   <thead> 
     <tr> 
       <th scope="col" style="text-align: center;">Employee ID</th>
       <th scope="col" style="text-align: center;">Project Name</th>
       <th scope="col" style="text-align: center;">Project Description</th>
-      <th scope="col" style="text-align: center;">Hours Worked</th>
+      <th scope="col" style="text-align: center;">Budgeted Hours</th>
       <th scope="col" style="text-align: center;">Time Posted</th>
       <th scope="col" style="text-align: center;">Comments</th>
     </tr>
@@ -46,7 +49,7 @@
           <a style="text-decoration: none;" href="/timesheet/{{id}}">{{project_description}}</a>
       </td>
       <td>{{hours_worked}} total hrs </td>
-      <td>{{employee.email}} clocked in on {{created_at}} </td>
+      <td>{{employee.email}} clocked in on {{format_date created_at}} </td>
       <td>
         <a href="/timesheet/{{id}}">{{comments.length}} comment(s)</a>
       </td>
@@ -55,7 +58,10 @@
   </tbody>
 </table>
 <div>
-    <button type="submit" class="btn btn-primary">Edit Post</button>
+  <a href="/dashboard/edit/{{timesheet.id}}" class="edit-link">Edit post</a>
 </div>
+{{!-- <div>
+    <button type="submit" class="btn btn-primary">Edit Post</button>
+</div> --}}
 
 <script src="/javascript/add-post.js"></script>

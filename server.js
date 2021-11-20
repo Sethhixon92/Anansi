@@ -20,8 +20,10 @@ const sess = {
 
 app.use(session(sess));
 
+const helpers = require('./utils/helpers');
+
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const hbs = exphbs.create({helpers});
 
 const PORT = process.env.PORT || 3001;
 

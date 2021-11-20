@@ -1,10 +1,14 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Timesheet, Employee, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+// when I type localhost:3001/homepage
+router.get('/homepage', withAuth, (req, res) => { 
   console.log(req.session);
   Timesheet.findAll({
+    // where: {
+    //   employee_id: req.session.employee_id
+    // },
     attributes: [
       'id',
       'employee_id',
@@ -88,17 +92,17 @@ router.get('/timesheet/:id', (req, res) => {
  });
 
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('login');
-});
+// router.get('/login', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+//   res.render('login');
+// });
 
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
+// router.get('/signup', (req, res) => {
+//   res.render('signup');
+// });
 
 
 

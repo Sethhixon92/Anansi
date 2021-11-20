@@ -22,7 +22,7 @@
           <a style="text-decoration: none;" href="/timesheet/{{timesheet.id}}">{{timesheet.project_description}}</a>
       </td>
       <td>{{timesheet.hours_worked}} total hrs </td>
-      <td>{{timesheet.employee.email}} clocked in on {{timesheet.created_at}} </td>
+      <td>{{timesheet.employee.email}} clocked in on {{format_date timesheet.created_at}} </td>
       <td>{{timesheet.comments.length}} comment(s)</td>
     </tr>
   </tbody>

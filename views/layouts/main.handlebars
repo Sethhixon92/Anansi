@@ -13,11 +13,12 @@
     <div class="wrapper">
         <header>
             <h1>
-                <a class="anansi" href="/">Anansi LLC</a>
+                <a class="anansi" href="/">Anansi Group</a>
             </h1>
             <nav>
                 {{#if loggedIn}}
-                <a class="dashboard" href="/dashboard">Dashboard</a>
+                <a id="home" class="all-projects" href="/homepage">All Projects</a>
+                <a class="dashboard" href="/dashboard">My Projects</a>
                 <a id="logout" class="logout" href="/logout">Logout</a>
                 {{else}}
                 <a class="login" href="/login">Login</a>
@@ -31,7 +32,7 @@
     </div>
 </body>
 <footer>
-    <h3>made by anansi</h3>
+    <h6>made by anansi group LLC</h6>
 </footer>
 
 
