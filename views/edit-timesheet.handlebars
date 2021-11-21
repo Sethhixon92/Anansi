@@ -1,0 +1,79 @@
+{{!-- <article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+    <div>
+      <input name="timesheet-project_name" type="text" value="{{timesheet.project_name}}" />
+    </div>
+    <div>
+      Posted {{timesheet.employee.email}} on {{format_date post.created_at}}
+      |
+      <a href="/timesheet/{{timesheet.id}}">{{timesheet.comments.length}}</a>
+    </div>
+    <button type="submit">Save post</button>
+  </form>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+    <div class="container">
+        <a href="/dashboard"> &larr; Back to dashboard</a>
+        <h2 style="color: royalblue;">Update Post</h2>
+        <form class="edit-timesheet-form">
+            <div class="mb-3">
+                <label for="formControlInput6" class="form-label">Project Name</label>
+                <input type="name" class="form-control" id="formControlInput6" value="{{timesheet.project_name}}" />
+            </div>
+            <div class="mb-3">
+                <label for="formControlInput7" class="form-label">Hours Worked</label>
+                <input type="name" class="form-control" id="formControlInput7" value="{{timesheet.hours_worked}}" />
+            </div>
+            <div class="mb-3">
+                <label for="formControlTextarea8" class="form-label">Project Description</label>
+                <textarea class="form-control" id="formControlTextarea8" rows="3">{{timesheet.project_description}}</textarea>
+            </div>
+            <div>
+                Posted by {{timesheet.employee.email}} on {{timesheet.created_at}}
+      |
+                <a href="/timesheet/{{timesheet.id}}">{{timesheet.comments.length}} {{timesheets.comments.length}}</a>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Save Post</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<div class="container">
+    <form class="comment-form">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea7" class="form-label">Type your comments</label>
+            <textarea class="form-control" id="exampleFormControlTextarea8" rows="3"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn primary">Add comment</button>
+        </div>
+    </form>
+</div>
+
+<script src="/javascript/edit-timesheet.js"></script>
+<script src="/javascript/comment.js"></script> --}}

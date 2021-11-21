@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table table-bordered table-primary rounded border-radius ">  
+  <thead> 
+    <tr> 
+      <th scope="col" style="text-align: center;">Employee ID</th>
+      <th scope="col" style="text-align: center;">Project Name</th>
+      <th scope="col" style="text-align: center;">Project Description</th>
+      <th scope="col" style="text-align: center;">Budgeted Hours</th>
+      <th scope="col" style="text-align: center;">Time Posted</th>
+      <th scope="col" style="text-align: center;">Comments</th>
+    </tr>
+  </thead>
+  {{#each posts}}
+  <tbody>
+    <tr>
+      <td>
+          <a style="text-decoration: none;">{{id}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;" href="/timesheet/{{id}}">{{project_name}}</a>
+      </td>
+      <td>
+          <a style="text-decoration: none;" href="/timesheet/{{id}}">{{project_description}}</a>
+      </td>
+      <td>{{hours_worked}} total hrs </td>
+      <td>{{employee.email}} clocked in on {{format_date created_at}} </td>
+      <td>
+        <a href="/timesheet/{{id}}">{{comments.length}} comment(s)</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
