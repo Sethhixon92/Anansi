@@ -24,8 +24,13 @@ Each  employee posted by clicking the dashboard.
 * Handlebars
 * dotenv 
 * Session
+# Screenshot : 
+![webpage screenshot](./public/images/new_post.jpg)
+![webpage screenshot](./public/images/post.jpg)
+![webpage screenshot](./public/images/desboard.jpg)
 
-## Link
-## Repository
-## Contributors
-
+# Link
+# Repository
+# Contributors 
+ Ken Ilochonwu, Paul Barcenas, Priti Patel, Seth Hixon
+ 

@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const employeesRoutes = require('./employees-routes');
-const timeSheetRoutes = require('./timeSheet-routes');
+const employeeRoutes = require('./employees-routes');
+const timesheetRoutes = require('./timeSheet-routes');
 const commentRoutes = require('./comment-routes');
 
-router.use('/employees', employeesRoutes);
-router.use('/timesheets', timeSheetRoutes);
+router.use('/employees', employeeRoutes);
+router.use('/timesheets', timesheetRoutes);
 router.use('/comments', commentRoutes);
 
 module.exports = router;
+

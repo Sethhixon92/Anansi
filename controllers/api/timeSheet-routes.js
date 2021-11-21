@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const { Timesheet, Employee, Comment } = require('../../models');
 // `/api/timesheets` endpoint
 
@@ -61,10 +60,33 @@ router.post('/', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  Timesheet.update(
+    {
+      project_name: req.body.project_name,
+      project_description: req.body.project_description,
+      hours_worked: req.body.hours_worked,
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-<<<<<<< HEAD:routes/api/timeSheet-routes.js
+
 module.exports = router;
 
-=======
-module.exports = router;
->>>>>>> d729780bdb06b4bef6f55eb35e4b32e0683ea1f1:controllers/api/timeSheet-routes.js
+

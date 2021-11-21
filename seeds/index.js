@@ -1,18 +1,21 @@
-const seedsEmployees = require('./employees-seeds');
-const seedsComment = require('./comment-seeds');
+const seedEmployees = require('./employee-seeds');
+const seedComments = require('./comment-seeds');
 
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----/n');
-    await seedsEmployees();
+
+    await seedEmployees();
     console.log('\n----- DATABASE SYNCED -----/n');
 
-    // await sequelize.sync({ force: true });
+    await seedTimesheets();
     console.log('\n----- DATABASE SYNCED -----/n');
-    await seedsComment();
+    
+    await seedComments();
     console.log('\n----- DATABASE SYNCED -----/n');
-}
 
-seedAll()
+    process.exit(0);
+};
+

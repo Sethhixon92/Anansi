@@ -52,13 +52,13 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password
   })
-  .then(dbEmployeedata => {
+  .then(dbEmployeeData => {
     req.session.save(() => {
       req.session.employee_id = dbEmployeeData.id;
       req.session.email = dbEmployeeData.email;
       req.session.loggedIn = true;
 
-      res.json(dbEmployeedata);
+      res.json(dbEmployeeData);
     });
 
     
@@ -85,8 +85,6 @@ router.post('/login',(req,res) => {
       res.status(400).json({message: 'incorrect password'});
       return;
     }
-<<<<<<< HEAD:routes/api/employees-routes.js
-=======
 
     req.session.save(() => {
       req.session.employee_id = dbEmployeeData.id;
@@ -98,27 +96,27 @@ router.post('/login',(req,res) => {
   });
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
+router.put('/:id', (req, res) => {
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+
+  // pass in req.body instead to only update what's passed through
+  Employee.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  }
-  else {
-    res.status(404).end();
-  }
-
-});
->>>>>>> d729780bdb06b4bef6f55eb35e4b32e0683ea1f1:controllers/api/employees-routes.js
-
-    req.session.save(() => {
-      req.session.employee_id = dbEmployeeData.id;
-      req.session.email = dbEmployeeData.email;
-      req.session.loggedIn = true;
-
-      res.json({ employee: dbEmployeeData, message: 'You are now logged in!' });
-    });
-  });
 });
 
 router.post('/logout', (req, res) => {
@@ -134,4 +132,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-

@@ -1,6 +1,6 @@
 const { Employee } = require('../models');
 
-const employeesData = [
+const employeeData = [
     {
         first_name: "Seth",
         last_name: 'Hixon',
@@ -39,6 +39,6 @@ const employeesData = [
     }
 ];
 
-const seedsEmployees = () => Employee.bulkCreate(employeesData);
+const seedEmployees = () => Employee.bulkCreate(employeeData);
 
-module.exports = seedsEmployees;
+module.exports = seedEmployees;
