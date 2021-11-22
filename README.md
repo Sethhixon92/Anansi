@@ -14,7 +14,7 @@ Each  employee posted by clicking the dashboard.
 * dotenv 
 * Handlebars
 * MYSQL 2
-* Day.js
+* nodemon
 * Insomnia
 
 # Installation used
@@ -25,12 +25,14 @@ Each  employee posted by clicking the dashboard.
 * dotenv 
 * Session
 # Screenshot : 
+![webpage screenshot](./public/images/home_page.jpg)
 ![webpage screenshot](./public/images/new_post.jpg)
 ![webpage screenshot](./public/images/post.jpg)
 ![webpage screenshot](./public/images/desboard.jpg)
 
 # Link
 # Repository
+https://github.com/Sethhixon92/Anansi
 # Contributors 
  Ken Ilochonwu, Paul Barcenas, Priti Patel, Seth Hixon
  

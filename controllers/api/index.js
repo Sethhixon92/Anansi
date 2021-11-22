@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const employeeRoutes = require('./employees-routes');
+const employeeRoutes = require('./employee-routes');
 const timesheetRoutes = require('./timeSheet-routes');
 const commentRoutes = require('./comment-routes');
 

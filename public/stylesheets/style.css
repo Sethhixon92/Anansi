@@ -3,16 +3,15 @@
   }
   
   body, html {
-    height: 100%;
+    
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     
   }
 
-  h3 {
-    color: cornsilk;
-
+  h3, h6 {
+    color: rgb(169, 185, 231);
   }
  
 
@@ -30,13 +29,16 @@
     font-weight: bold;
     transition: color .1s;
   }
-  .login, .dashboard, .anansi, .logout {
+  .login, .dashboard, .anansi, .logout, .all-projects {
+    color: white;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 15px;
     padding: 0 10px;
   }
   .login-link {
     text-decoration: none;
+    font-weight: normal;
+    text-align: center;
   }
   
   a:hover {
@@ -90,7 +92,7 @@
   .wrapper {
     width: 100%;
     background-color: #d41414;
-    background-image: linear-gradient(to bottom, rgb(20, 3, 133), rgb(139, 158, 245));
+    background-image: linear-gradient(to bottom, rgb(20, 3, 133), rgb(146, 163, 238));
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -99,10 +101,11 @@
   }
   
   header {
-    border-bottom: 3px solid #ccc;
-    background-color:rgb(163, 193, 233);
-    height: 80px;
+    position:-webkit-sticky;
+    position: sticky;
+    top: 0;
     display: flex;
+    background-color: rgb(102, 132, 233);
     justify-content: space-between;
     align-items: center;
   
@@ -192,9 +195,11 @@
   }
   
   footer {
-    border-top: 1px solid #ccc;
     display: flex;
     justify-content: center;
+    padding: 5%;
+    
+
 }
 
 #create-new-post {
@@ -242,7 +247,7 @@
     height: 155px; 
   }
 footer {
- background-color: #555;
+ background-color: rgb(102, 132, 233);
     color: white;
     padding: 3px;
     height: 80px; 

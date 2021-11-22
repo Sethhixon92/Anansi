@@ -6,7 +6,7 @@
       <th scope="col" style="text-align: center;">Employee ID</th>
       <th scope="col" style="text-align: center;">Project Name</th>
       <th scope="col" style="text-align: center;">Project Description</th>
-      <th scope="col" style="text-align: center;">Hours Worked</th>
+      <th scope="col" style="text-align: center;">Budgeted Hours</th>
       <th scope="col" style="text-align: center;">Time Posted</th>
       <th scope="col" style="text-align: center;">Comments</th>
     
@@ -26,7 +26,7 @@
           <a style="text-decoration: none;" href="/timesheet/{{id}}">{{project_description}}</a>
       </td>
       <td>{{hours_worked}} total hrs </td>
-      <td>{{employee.email}} clocked in on {{created_at}} </td>
+      <td>{{employee.email}} clocked in on {{format_date created_at}} </td>
       <td>
         <a href="/timesheet/{{id}}">{{comments.length}} comment(s)</a>
       </td>
