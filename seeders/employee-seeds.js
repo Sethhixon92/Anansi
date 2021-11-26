@@ -1,8 +1,4 @@
-<<<<<<< HEAD:seeders/employee-seeds.js
 const { Employee } = require('../models');
-=======
-const { Employee, Timesheet } = require('../models');
->>>>>>> feature/seeds:seeders/employees-seeds.js
 
 const employeeData = [
     {

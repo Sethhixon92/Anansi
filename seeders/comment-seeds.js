@@ -29,10 +29,6 @@ const commentData =  [
     }
 ];
 
-<<<<<<< HEAD:seeds/comment-seeds.js
 const seedComments = () => Comment.bulkCreate(commentData);
-=======
-const seedsComment = () => Comment.bulkCreate(commentData);
->>>>>>> feature/seeds:seeders/comment-seeds.js
 
 module.exports = seedComments;
