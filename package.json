@@ -10,15 +10,16 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.5",
     "express-session": "^1.17.2",
+    "express.js": "^1.0.0",
     "materialize-css": "^1.0.0",
-    "mysql2": "^2.3.3-rc.0",
-    "sequelize": "^6.9.0"
+    "mysql2": "^2.3.3",
+    "seed": "node seeders/index.js",
+    "sequelize": "^6.11.0"
   },
   "scripts": {
     "seed": "node seeds/",
     "test": "jest",
-    "start": "node server.js",
-    "watch": "nodemon"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
