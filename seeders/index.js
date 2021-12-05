@@ -1,6 +1,6 @@
 const seedEmployees = require('./employee-seeds');
 const seedComments = require('./comment-seeds');
-
+const pkg = require('../../package.json');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
