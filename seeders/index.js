@@ -1,4 +1,4 @@
-const seedEmployees = require('./employee-seeds');
+const seedEmployees = require('./employees-seeds');
 const seedComments = require('./comment-seeds');
 const seedsTimesheet = require('./timesheet-seeds');
 const pkg = require('../../package.json');
