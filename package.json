@@ -14,7 +14,6 @@
     "materialize-css": "^1.0.0",
     "mysql2": "^2.3.3",
     "node": "v16.10.0",
-    "version": "^16.10.0",
     "seed": "node seeders/index.js",
     "sequelize": "^6.11.0"
   },
