@@ -1,5 +1,5 @@
 const Employee = require("./Employee");
-const Timesheet = require("./Timesheet");
+const Timesheet = require("./timesheet");
 const Comment = require("./Comment");
 
 
